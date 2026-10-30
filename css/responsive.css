@@ -1,0 +1,66 @@
+/* ====================================================================
+   14. RESPONSIVE DESIGN (TABLET & MOBILE)
+   ==================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+  .filter-sidebar {
+    display: none; /* toggle-able on mobile if needed */
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .usp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar-inner {
+    justify-content: center;
+    text-align: center;
+  }
+  .top-bar-links {
+    display: none;
+  }
+  .header-row {
+    flex-wrap: wrap;
+  }
+  .header-search {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+  }
+  .action-btn-text {
+    display: none;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .usp-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .proof-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-actions-row {
+    grid-template-columns: 1fr;
+  }
+}
+

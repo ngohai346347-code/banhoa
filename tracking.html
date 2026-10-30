@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra Cứu Đơn Hàng &amp; Duyệt Ảnh Hoa Thật Trước Khi Giao | Shop Hoa Nguyễn Miền</title>
+  <meta name="description" content="Tra cứu tiến trình đơn hoa tươi theo thời gian thực và duyệt ảnh chụp hoa thực tế vừa cắm xong tại Shop Hoa Nguyễn Miền. Hotline: 0393.945.347">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- CSS Design System Modules -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div>
+        <span class="top-bar-badge">TRA CỨU THỜI GIAN THỰC</span>
+        Chụp ảnh hoa thật gửi khách duyệt trước khi đem đi giao &bull; Cam kết hoa tươi 100%
+      </div>
+      <div class="top-bar-links">
+        <a href="tel:0393945347">Hotline: 0393.945.347</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-row">
+        <a href="index.html" class="header-brand">
+          <img src="assets/web_logo_light.svg" alt="Shop Hoa Nguyễn Miền Logo" class="header-logo-img">
+        </a>
+        <div class="header-actions">
+          <a href="index.html" class="btn btn-outline" style="padding: 9px 18px; border: 1.5px solid var(--primary); border-radius: 8px; font-weight: 700; color: var(--primary);">
+            &larr; Về Cửa Hàng
+          </a>
+          <a href="tel:0393945347" class="cart-btn-header" style="background: #25d366;">
+            📞 Gọi Florist
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="padding: 40px 0 80px; background: #f8fafc; min-height: 80vh;">
+    <div class="container" style="max-width: 960px;">
+      
+      <!-- Search Order Card -->
+      <div style="background: #ffffff; border-radius: 16px; padding: 32px; box-shadow: var(--shadow-md); border: 1.5px solid #e2e8f0; margin-bottom: 30px;">
+        <h1 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--primary); margin-bottom: 6px; text-align: center;">
+          📸 Tra Cứu &amp; Duyệt Ảnh Hoa Thực Tế
+        </h1>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.92rem; max-width: 550px; margin: 0 auto 24px;">
+          Nhập mã đơn hàng được gửi qua tin nhắn Zalo/SMS để xem ảnh hoa thật thợ vừa cắm xong và theo dõi tiến trình giao hàng.
+        </p>
+
+        <div style="display: flex; gap: 10px; max-width: 520px; margin: 0 auto 16px;">
+          <input type="text" id="tracking-input-id" value="NM-8869" placeholder="Nhập mã đơn (Ví dụ: NM-8869)" style="flex: 1; padding: 12px 16px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 1rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">
+          <button type="button" class="btn-finder-submit" style="padding: 12px 24px; border-radius: 8px;" onclick="loadTrackingOrder()">
+            Tra Cứu Đơn
+          </button>
+        </div>
+
+        <!-- Quick Sample Buttons -->
+        <div style="text-align: center; font-size: 0.8rem; color: #64748b;">
+          <span>Xem nhanh đơn mẫu:</span>
+          <button type="button" style="background: none; border: none; color: var(--primary); font-weight: 700; text-decoration: underline; cursor: pointer; margin: 0 4px;" onclick="document.getElementById('tracking-input-id').value='NM-8869'; loadTrackingOrder();">Đơn #NM-8869 (Hoa sinh nhật)</button> &bull;
+          <button type="button" style="background: none; border: none; color: var(--primary); font-weight: 700; text-decoration: underline; cursor: pointer; margin: 0 4px;" onclick="document.getElementById('tracking-input-id').value='NM-9921'; loadTrackingOrder();">Đơn #NM-9921 (Kệ khai trương)</button>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div id="tracking-result-box" style="background: #ffffff; border-radius: 16px; padding: 32px; box-shadow: var(--shadow-md); border: 1px solid #e2e8f0;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span style="font-size: 0.85rem; color: #64748b;">MÃ ĐƠN HÀNG:</span>
+            <h2 id="track-order-code" style="font-size: 1.6rem; color: var(--primary); margin: 2px 0;">NM-8869</h2>
+            <span style="font-size: 0.85rem; color: #059669; font-weight: 600;">● <span id="track-status-text">Đã cắm xong - Chờ khách duyệt ảnh</span></span>
+          </div>
+
+          <div id="track-approval-pill">
+            <span class="badge-waiting">⏳ Đang chờ bạn duyệt ảnh hoa</span>
+          </div>
+        </div>
+
+        <!-- Timeline 5 bước -->
+        <div class="proof-timeline" style="margin: 30px 0;">
+          <div class="timeline-step done" id="t-step-1">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-label">Tiếp nhận</div>
+          </div>
+          <div class="timeline-step done" id="t-step-2">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-label">Đang cắm</div>
+          </div>
+          <div class="timeline-step done" id="t-step-3">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-label">Chờ duyệt ảnh</div>
+          </div>
+          <div class="timeline-step" id="t-step-4">
+            <div class="timeline-dot">4</div>
+            <div class="timeline-label">Đang giao</div>
+          </div>
+          <div class="timeline-step" id="t-step-5">
+            <div class="timeline-dot">5</div>
+            <div class="timeline-label">Đã giao</div>
+          </div>
+        </div>
+
+        <!-- Bảng so sánh 1:1 Ảnh mẫu vs Ảnh thật thợ vừa cắm -->
+        <div class="proof-comparison-grid" style="margin-bottom: 28px;">
+          <div class="proof-photo-box">
+            <div class="proof-photo-header">
+              <span>ẢNH MẪU CATALOG GỐC</span>
+              <small style="color: #64748b;">(Mẫu khách chọn đặt)</small>
+            </div>
+            <div class="proof-img-frame">
+              <img id="track-catalog-img" src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80" alt="Ảnh mẫu gốc">
+            </div>
+          </div>
+
+          <div class="proof-photo-box actual-box">
+            <div class="proof-photo-header highlight">
+              <span>📸 ẢNH HOA THẬT VỪA CẮM XONG TẠI SHOP</span>
+              <span style="background: #10b981; color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;">CHỤP THỰC TẾ</span>
+            </div>
+            <div class="proof-img-frame">
+              <img id="track-actual-img" src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80" alt="Ảnh hoa thật tại shop Nguyễn Miền">
+            </div>
+          </div>
+        </div>
+
+        <!-- Chi tiết đơn hàng -->
+        <div class="proof-info-card">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px;">
+            <div><strong>Người đặt:</strong> <span id="track-buyer">Anh Trần Quốc Huy</span></div>
+            <div><strong>Người nhận:</strong> <span id="track-recipient">Chị Mai Phương Thảo (Giấu tên người gửi)</span></div>
+            <div><strong>Địa chỉ giao:</strong> <span id="track-address">Tầng 18, Bitexco Financial Tower, Q.1, TP.HCM</span></div>
+            <div><strong>Khung giờ hẹn:</strong> <span id="track-time">Hôm nay (14:30 - 15:30)</span></div>
+          </div>
+          <div>
+            <strong>Lời chúc in trên thiệp:</strong>
+            <p id="track-greeting" style="color: #b45309; font-style: italic; margin-top: 4px;">
+              "Chúc mừng sinh nhật em yêu! Cảm ơn em vì đã luôn là ánh nắng dịu dàng nhất trong cuộc đời anh. Yêu em thật nhiều! - Từ Huy"
+            </p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div id="track-actions-container" class="proof-actions-wrap">
+          <button type="button" class="btn-proof-edit" onclick="trackRequestEdit()">
+            ✏️ Yêu Cầu Chỉnh Sửa Thêm (Thêm hoa, đổi nơ...)
+          </button>
+          <button type="button" class="btn-proof-approve" onclick="trackApproveFlower()">
+            ✅ Duyệt Đẹp Rồi &ndash; Đem Đi Giao Giúp Em!
+          </button>
+        </div>
+
+        <div id="track-approved-msg" style="display: none; text-align: center; padding: 20px; background: #ecfdf5; border-radius: 10px; border: 1.5px solid #a7f3d0; margin-top: 20px;">
+          <h4 style="color: #065f46; font-size: 1.15rem; margin-bottom: 6px;">🎉 Bạn Đã Duyệt Ảnh Thành Công!</h4>
+          <p style="color: #047857; font-size: 0.9rem;">Thợ hoa đã đóng gói cẩn thận và bàn giao cho Shipper. Hoa đang trên đường tới người nhận!</p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="padding: 40px 0 20px;">
+    <div class="container" style="text-align: center;">
+      <img src="assets/web_logo_dark.svg" alt="Logo" style="height: 48px; margin: 0 auto 14px;">
+      <p style="font-size: 0.85rem; color: #94a3b8;">Shop Hoa Nguyễn Miền &bull; Điện hoa tươi cao cấp &bull; Hotline: 0393.945.347</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function loadTrackingOrder() {
+      const code = document.getElementById('tracking-input-id').value.trim().toUpperCase();
+      document.getElementById('track-order-code').textContent = code;
+
+      if (code === 'NM-9921') {
+        document.getElementById('track-catalog-img').src = 'https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=800&q=80';
+        document.getElementById('track-actual-img').src = 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80';
+        document.getElementById('track-buyer').textContent = 'Chị Minh Anh (Công ty VinaCorp)';
+        document.getElementById('track-recipient').textContent = 'Ông Nguyễn Hoàng Đức (Khách sạn Rex Sài Gòn)';
+        document.getElementById('track-address').textContent = '141 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP.HCM';
+        document.getElementById('track-greeting').textContent = '"Kính chúc Quý Công ty Khai trương Hồng Phát, Khởi đầu hanh thông và Mã đáo thành công!"';
+      } else {
+        document.getElementById('track-catalog-img').src = 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80';
+        document.getElementById('track-actual-img').src = 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80';
+        document.getElementById('track-buyer').textContent = 'Anh Trần Quốc Huy';
+        document.getElementById('track-recipient').textContent = 'Chị Mai Phương Thảo (Giấu tên người gửi)';
+        document.getElementById('track-address').textContent = 'Tầng 18, Bitexco Financial Tower, Q.1, TP.HCM';
+        document.getElementById('track-greeting').textContent = '"Chúc mừng sinh nhật em yêu! Cảm ơn em vì đã luôn là ánh nắng dịu dàng nhất trong cuộc đời anh. Yêu em thật nhiều! - Từ Huy"';
+      }
+
+      // Reset approval state
+      document.getElementById('track-actions-container').style.display = 'grid';
+      document.getElementById('track-approved-msg').style.display = 'none';
+      document.getElementById('track-approval-pill').innerHTML = '<span class="badge-waiting">⏳ Đang chờ bạn duyệt ảnh hoa</span>';
+      document.getElementById('t-step-4').classList.remove('done');
+    }
+
+    function trackApproveFlower() {
+      document.getElementById('track-actions-container').style.display = 'none';
+      document.getElementById('track-approved-msg').style.display = 'block';
+      document.getElementById('track-approval-pill').innerHTML = '<span class="badge-approved">✓ Đã duyệt ảnh - Shipper đang giao</span>';
+      document.getElementById('track-status-text').textContent = 'Đã duyệt ảnh - Shipper đang trên đường giao';
+      document.getElementById('t-step-4').classList.add('done');
+      alert('Tuyệt vời! Cảm ơn bạn. Hoa đang được chuyển tới người nhận.');
+    }
+
+    function trackRequestEdit() {
+      const note = prompt('Vui lòng cho shop biết bạn muốn chỉnh sửa điểm nào trên bó hoa:');
+      if (note) {
+        alert('Đã gửi yêu cầu: "' + note + '". Florist Nguyễn Miền sẽ chỉnh và gửi ảnh lại trong 10 phút!');
+        document.getElementById('track-status-text').textContent = 'Thợ đang chỉnh sửa lại theo yêu cầu của bạn';
+      }
+    }
+  </script>
+</body>
+</html>

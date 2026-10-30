@@ -1,0 +1,331 @@
+/**
+ * SHOP HOA NGUYỄN MIỀN - DỮ LIỆU SẢN PHẨM
+ * Module: data.js
+ * Chứa toàn bộ dữ liệu sản phẩm hoa tươi và đơn hàng mẫu.
+ */
+
+// 1. DỮ LIỆU SẢN PHẨM HOA TƯƠI MẪU CHUẨN (CÓ MÀU SẮC & ẢNH GÓC THỨ 2)
+const FLOWER_PRODUCTS = [
+  {
+    id: 1,
+    sku: "NM-SN01",
+    name: "Hồng Ohara Đỏ & Baby Trắng 'Tình Nồng Cháy'",
+    price: 680000,
+    originalPrice: 790000,
+    rating: 5.0,
+    reviewsCount: 42,
+    badge: "Bán chạy nhất",
+    badgeType: "hot",
+    color: "do",
+    occasion: ["sinh-nhat", "tinh-yeu", "20-10"],
+    style: "bo-hoa",
+    flowerType: "hoa-hong",
+    recipient: ["nu", "doi-tac"],
+    priceRange: "500-1000",
+    image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "18 cành hồng Ohara đỏ nhung nhập khẩu, hoa baby trắng Hà Lan, lá bạc dollar cao cấp, giấy gói xi măng phong cách Hàn Quốc kèm nơ lụa satin.",
+    dimensions: "Cao 55cm x Rộng 40cm",
+    description: "Tone đỏ quyến rũ nồng nàn đại diện cho tình yêu sâu sắc và sự trân trọng tuyệt đối. Thích hợp tặng sinh nhật người yêu, vợ hoặc người phụ nữ đặc biệt."
+  },
+  {
+    id: 2,
+    sku: "NM-KT02",
+    name: "Kệ Hoa Khai Trương 2 Tầng 'Đại Phát Vinh Hoa'",
+    price: 1850000,
+    originalPrice: 2200000,
+    rating: 4.9,
+    reviewsCount: 38,
+    badge: "Khai trương VIP",
+    badgeType: "luxury",
+    color: "vang",
+    occasion: ["khai-truong", "chuc-mung"],
+    style: "ke-hoa",
+    flowerType: "huong-duong",
+    recipient: ["doi-tac", "nam"],
+    priceRange: "1000-2000",
+    image: "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "Hoa hướng dương đại đóa Đà Lạt, hoa hồng vàng ánh kim, thiên điểu kiêu hãnh, lan mokara vàng rực, lá cau cảnh, kệ sắt mỹ thuật sơn tĩnh điện cao cấp.",
+    dimensions: "Cao 175cm x Rộng 85cm",
+    description: "Kệ hoa khai trương 2 tầng mang sắc vàng may mắn, rực rỡ, biểu tượng cho lời chúc kinh doanh thịnh vượng, tài lộc dồi dào và khởi đầu hanh thông."
+  },
+  {
+    id: 3,
+    sku: "NM-HD03",
+    name: "Chậu Lan Hồ Điệp Hoàng Gia 5 Cành 'Kim Cát'",
+    price: 1450000,
+    originalPrice: 1650000,
+    rating: 5.0,
+    reviewsCount: 29,
+    badge: "Hoa tươi lâu",
+    badgeType: "trending",
+    color: "trang",
+    occasion: ["chuc-mung", "khai-truong", "sinh-nhat"],
+    style: "binh-hoa",
+    flowerType: "lan-ho-diep",
+    recipient: ["doi-tac", "nam", "nu"],
+    priceRange: "1000-2000",
+    image: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "5 cành lan hồ điệp trắng họng vàng tuyển chọn loại A, chậu gốm sứ Bát Tràng tráng men cao cấp, rêu xanh nhập khẩu và phụ kiện decor sang trọng.",
+    dimensions: "Cao 80cm x Rộng 50cm (Độ bền 4-6 tuần)",
+    description: "Lan hồ điệp quý phái, thanh khiết, thời gian tươi kéo dài hơn 1 tháng. Món quà đẳng cấp dành tặng sếp, tân gia nhà mới hoặc đối tác quan trọng."
+  },
+  {
+    id: 4,
+    sku: "NM-GH04",
+    name: "Giỏ Hoa Pastel 'Nắng Sớm Ban Mai' Tặng Mẹ",
+    price: 520000,
+    originalPrice: 620000,
+    rating: 4.8,
+    reviewsCount: 51,
+    badge: "Freeship",
+    badgeType: "freeship",
+    color: "hong",
+    occasion: ["sinh-nhat", "chuc-mung", "20-10"],
+    style: "gio-hoa",
+    flowerType: "hoa-hong",
+    recipient: ["nu"],
+    priceRange: "500-1000",
+    image: "https://images.unsplash.com/photo-1589244159943-460088ed5c92?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1589244159943-460088ed5c92?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "Hồng kem dâu Đà Lạt, cẩm tú cầu hồng baby, hoa cát tường nhật bản, cúc tana trắng, giỏ mây tre đan tự nhiên phong cách Vintage.",
+    dimensions: "Cao 45cm x Rộng 38cm",
+    description: "Tone màu pastel dịu ngọt, thanh nhã như tình yêu thương bao la của mẹ. Thích hợp tặng mẹ, cô giáo hoặc những người phụ nữ yêu nét đẹp mộc mạc."
+  },
+  {
+    id: 5,
+    sku: "NM-TY05",
+    name: "Hộp Hoa Trái Tim 'Chỉ Riêng Mình Em' Lãng Mạn",
+    price: 950000,
+    originalPrice: 1100000,
+    rating: 4.9,
+    reviewsCount: 67,
+    badge: "Bán chạy 20/10",
+    badgeType: "hot",
+    color: "do",
+    occasion: ["tinh-yeu", "sinh-nhat", "20-10"],
+    style: "lang-hop",
+    flowerType: "hoa-hong",
+    recipient: ["nu"],
+    priceRange: "500-1000",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "33 đóa hồng đỏ Ecuador tuyển chọn xếp hình trái tim hoàn mỹ, điểm xuyết hoa baby trắng sấy khô, hộp cứng cao cấp in nơ ép kim vàng.",
+    dimensions: "Đường kính 35cm x Cao 18cm",
+    description: "33 đóa hồng tượng trưng cho lời hẹn ước 'Yêu em sâu đậm cả ba đời ba kiếp'. Thiết kế hộp trái tim sang trọng giúp bạn ghi trọn điểm tuyệt đối."
+  },
+  {
+    id: 6,
+    sku: "NM-CB06",
+    name: "Vòng Hoa Tang Lễ 'An Lạc Cõi Phật' Thành Kính",
+    price: 850000,
+    originalPrice: 950000,
+    rating: 5.0,
+    reviewsCount: 22,
+    badge: "Giao gấp 60p",
+    badgeType: "express",
+    color: "trang",
+    occasion: ["chia-buon"],
+    style: "ke-hoa",
+    flowerType: "lan-ho-diep",
+    recipient: ["doi-tac", "nam", "nu"],
+    priceRange: "500-1000",
+    image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "Hoa cúc đại đóa trắng thanh khiết, hoa lan mokara trắng, hoa ly trắng thơm ngát, lá cau cảnh, kệ đứng gỗ bọc vải đen trang trọng.",
+    dimensions: "Cao 170cm x Rộng 80cm",
+    description: "Kệ hoa chia buồn tone trắng trang nghiêm, gửi gắm lời nguyện cầu cho hương linh người đã khuất được an nghỉ nơi cõi vĩnh hằng và chia sẻ nỗi đau cùng gia quyến."
+  },
+  {
+    id: 7,
+    sku: "NM-TL07",
+    name: "Bó Hoa Tulip Hà Lan 'Thuần Khiết Tình Khôi'",
+    price: 1200000,
+    originalPrice: 1400000,
+    rating: 4.9,
+    reviewsCount: 31,
+    badge: "Hoa ngoại nhập",
+    badgeType: "luxury",
+    color: "trang",
+    occasion: ["sinh-nhat", "tinh-yeu", "chuc-mung"],
+    style: "bo-hoa",
+    flowerType: "hoa-tulip",
+    recipient: ["nu"],
+    priceRange: "1000-2000",
+    image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "15 cành hoa Tulip trắng tuyết nhập khẩu nguyên búp từ Hà Lan, giấy gói kraft phong cách tối giản Bắc Âu, thắt nơ nhung đen thanh lịch.",
+    dimensions: "Cao 45cm x Rộng 30cm",
+    description: "Hoa Tulip mang nét đẹp hiện đại, thanh tao và kiêu sa. Lựa chọn tinh tế nhất cho các bạn gái yêu phong cách sống tối giản và nghệ thuật thẩm mỹ."
+  },
+  {
+    id: 8,
+    sku: "NM-BB08",
+    name: "Bó Hoa Baby Trắng 'Giấc Mơ Tuyết Trắng' Khổng Lồ",
+    price: 490000,
+    originalPrice: 580000,
+    rating: 4.7,
+    reviewsCount: 84,
+    badge: "Giá tốt",
+    badgeType: "sale",
+    color: "trang",
+    occasion: ["sinh-nhat", "tinh-yeu", "20-10"],
+    style: "bo-hoa",
+    flowerType: "hoa-baby",
+    recipient: ["nu"],
+    priceRange: "duoi-500",
+    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "Hoa baby trắng cao cấp sấy khô nhẹ giữ dáng tròn bồng bềnh như mây, giấy gói đen mờ cá tính làm nổi bật sắc trắng tinh khôi.",
+    dimensions: "Cao 50cm x Rộng 45cm (Độ bền khô trên 1 năm)",
+    description: "Bó hoa baby bồng bềnh như đám mây trắng, tươi lâu và có thể để khô tự nhiên trang trí góc làm việc, phòng ngủ suốt cả năm trời."
+  },
+  {
+    id: 9,
+    sku: "NM-TC09",
+    name: "Giỏ Hoa Cẩm Tú Cầu Xanh 'Hòa Bình & Tri Kỷ'",
+    price: 780000,
+    originalPrice: 890000,
+    rating: 4.8,
+    reviewsCount: 26,
+    badge: "Thanh nhã",
+    badgeType: "trending",
+    color: "xanh",
+    occasion: ["chuc-mung", "sinh-nhat"],
+    style: "gio-hoa",
+    flowerType: "cam-tu-cau",
+    recipient: ["nam", "doi-tac"],
+    priceRange: "500-1000",
+    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589244159943-460088ed5c92?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "3 đóa Cẩm Tú Cầu xanh ngọc biển Đà Lạt, hoa hồng trắng cồ, hoa phi yến tím, lá khuynh diệp, giỏ đan tay thủ công tinh xảo.",
+    dimensions: "Cao 50cm x Rộng 40cm",
+    description: "Tone màu xanh mát mắt mang cảm giác an yên, hòa ái. Mẫu hoa rất được các sếp nam, đối tác và đồng nghiệp ưa chuộng."
+  },
+  {
+    id: 10,
+    sku: "NM-VIP10",
+    name: "Bình Hoa Pha Lê 'Phú Quý Viên Mãn' Đại Sảnh",
+    price: 2600000,
+    originalPrice: 3100000,
+    rating: 5.0,
+    reviewsCount: 14,
+    badge: "Cao cấp VIP",
+    badgeType: "luxury",
+    color: "tim",
+    occasion: ["khai-truong", "chuc-mung"],
+    style: "binh-hoa",
+    flowerType: "lan-ho-diep",
+    recipient: ["doi-tac", "nam"],
+    priceRange: "tren-2000",
+    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "9 cành Lan Hồ Điệp tím hoàng gia, hoa hồng Ecuador cam ánh lửa, bình pha lê Tiệp Khắc mạ viền vàng 24k cao cấp.",
+    dimensions: "Cao 95cm x Rộng 65cm",
+    description: "Tác phẩm cắm hoa nghệ thuật đỉnh cao dành cho sảnh đón tiếp công ty, phòng khách biệt thự hoặc quà biếu tặng các vị lãnh đạo cấp cao."
+  },
+  {
+    id: 11,
+    sku: "NM-HD11",
+    name: "Bó Hoa Hướng Dương 'Khát Vọng Bay Xa' Tốt Nghiệp",
+    price: 450000,
+    originalPrice: 520000,
+    rating: 4.8,
+    reviewsCount: 93,
+    badge: "Tốt nghiệp Hot",
+    badgeType: "sale",
+    color: "vang",
+    occasion: ["chuc-mung", "sinh-nhat"],
+    style: "bo-hoa",
+    flowerType: "huong-duong",
+    recipient: ["nam", "nu"],
+    priceRange: "duoi-500",
+    image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "5 bông hướng dương to khỏe rực rỡ, lá bạc, cúc thạch thảo tím, giấy xi măng bo nơ vàng đồng rực rỡ.",
+    dimensions: "Cao 55cm x Rộng 35cm",
+    description: "Sắc vàng hướng dương như ánh mặt trời rạng rỡ, cổ vũ tinh thần nỗ lực vươn lên. Món quà số 1 cho các bạn trẻ trong lễ tốt nghiệp và thăng tiến sự nghiệp."
+  },
+  {
+    id: 12,
+    sku: "NM-TN12",
+    name: "Lẵng Hoa Gỗ 'Dịu Dàng Sắc Xuân' Để Bàn",
+    price: 880000,
+    originalPrice: 990000,
+    rating: 4.9,
+    reviewsCount: 35,
+    badge: "Mới lên kệ",
+    badgeType: "trending",
+    color: "hong",
+    occasion: ["sinh-nhat", "chuc-mung", "20-10"],
+    style: "lang-hop",
+    flowerType: "hoa-hong",
+    recipient: ["nu", "doi-tac"],
+    priceRange: "500-1000",
+    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589244159943-460088ed5c92?auto=format&fit=crop&w=800&q=80"
+    ],
+    composition: "Hồng đào phớt Đà Lạt, cúc mẫu đơn hồng, hoa sao tím, lá cẩm thạch trong hộp gỗ thông tự nhiên khắc laser thương hiệu.",
+    dimensions: "Cao 40cm x Rộng 45cm",
+    description: "Thiết kế lẵng gỗ thông mộc mạc, tiện lợi để bàn làm việc hoặc bàn trà tiếp khách. Tỏa hương thơm tự nhiên nhẹ nhàng, thư thái cả ngày dài."
+  }
+];
+
+// 2. DỮ LIỆU ĐƠN HÀNG MẪU ĐỂ TEST MODULE DUYỆT ẢNH HOA THẬT
+const SAMPLE_ORDER_PROOF = {
+  orderId: "NM-8869",
+  customerName: "Anh Trần Quốc Huy",
+  phone: "0912****88",
+  recipientName: "Chị Mai Phương Thảo",
+  recipientAddress: "Toà nhà Bitexco, Q.1, TP.HCM",
+  productName: "Bó Hoa Hồng Ohara Đỏ 'Tình Nồng Cháy' (NM-SN01)",
+  status: "Đã cắm xong - Chờ khách duyệt ảnh",
+  statusStep: 3, // 1: Tiếp nhận, 2: Đang cắm, 3: Đã cắm & Chờ duyệt, 4: Đang giao, 5: Đã giao
+  deliveryTimeSlot: "14:30 - 15:30 (Hôm nay)",
+  floristName: "Florist Nguyễn Miền & Cẩm Tú",
+  originalCatalogPhoto: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80",
+  // Ảnh hoa thật thợ vừa cắm xong tại shop
+  actualPhotoBeforeDelivery: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80",
+  greetingCardContent: "Chúc mừng sinh nhật em yêu! Cảm ơn em vì đã luôn là ánh nắng dịu dàng nhất trong cuộc đời anh. Yêu em thật nhiều! - Từ Huy",
+  ribbonType: "Thiệp ép kim hoa văn cao cấp",
+  addOns: ["Bánh kem mini socola Pháp", "Gấu bông Teddy 35cm"],
+  isApproved: false
+};

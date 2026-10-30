@@ -1,0 +1,442 @@
+/* ====================================================================
+   3. HERO BANNER & QUICK FINDER
+   ==================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #0d2346 0%, #112b54 60%, #1d427d 100%);
+  color: #ffffff;
+  padding: 56px 0 70px;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(207, 167, 80, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(207, 167, 80, 0.15);
+  border: 1px solid rgba(207, 167, 80, 0.35);
+  color: #f7eed7;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 2.85rem;
+  font-weight: 700;
+  line-height: 1.22;
+  margin-bottom: 18px;
+}
+
+.hero-title span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+
+.hero-usp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.usp-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.usp-chip svg {
+  color: var(--gold);
+}
+
+/* Quick Finder Card */
+.quick-finder-card {
+  background: #ffffff;
+  color: var(--text-main);
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--gold-border);
+}
+
+.finder-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.finder-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.finder-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.finder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.finder-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.finder-select {
+  width: 100%;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.finder-select:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(17, 43, 84, 0.1);
+}
+
+.btn-finder-submit {
+  background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
+  color: #ffffff;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(207, 167, 80, 0.4);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-finder-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(207, 167, 80, 0.5);
+}
+
+/* ====================================================================
+   4. USP HIGHLIGHTS BAR
+   ==================================================================== */
+.usp-section {
+  padding: 30px 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.usp-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #fbfcfe;
+  border-radius: var(--radius-md);
+  border: 1px solid #eef2f7;
+}
+
+.usp-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary-surface);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.usp-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.usp-content p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* ====================================================================
+   5. OCCASION FILTER TABS BAR
+   ==================================================================== */
+.tabs-bar-section {
+  padding: 24px 0 10px;
+}
+
+.tabs-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.tab-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.tab-filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #f8fafc;
+}
+
+.tab-filter-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(17, 43, 84, 0.2);
+}
+
+/* ====================================================================
+   17. HERO BANNER SLIDER (KHỐI 1 CHUẨN ĐẶC TẢ)
+   ==================================================================== */
+.hero-slider-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slides-container {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-slider-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hero-dot.active {
+  background: var(--gold);
+  width: 26px;
+  border-radius: 5px;
+}
+
+.hero-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-arrow-btn:hover {
+  background: var(--gold);
+  color: var(--primary);
+}
+
+.hero-arrow-prev { left: 20px; }
+.hero-arrow-next { right: 20px; }
+
+/* ====================================================================
+   18. KHỐI 3: SỰ KIỆN TRỌNG ĐIỂM THEO MÙA VỤ (SEASONAL CAMPAIGN)
+   ==================================================================== */
+.seasonal-campaign-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #fff5f7 0%, #fef2f2 50%, #fffbf2 100%);
+  border-bottom: 1px solid #fed7aa;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.campaign-title-wrap h2 {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  color: #9f1239;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.campaign-title-wrap p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Countdown Timer */
+.countdown-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid #fecdd3;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #be123c;
+  background: #fff1f2;
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-width: 34px;
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 0.65rem;
+  color: #9f1239;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.countdown-colon {
+  font-weight: 800;
+  color: #be123c;
+  font-size: 1.1rem;
+}
+
+/* ====================================================================
+   19. KHỐI 4: BEST SELLERS (SẢN PHẨM BÁN CHẠY NHẤT)
+   ==================================================================== */
+.bestsellers-section {
+  padding: 50px 0 20px;
+  background: #ffffff;
+}
+
+.section-head-center {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+
+.section-head-center h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.section-head-center p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.bestsellers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
